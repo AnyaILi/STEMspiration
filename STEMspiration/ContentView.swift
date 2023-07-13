@@ -9,13 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            Color(.systemMint)
+                .ignoresSafeArea()
+            VStack(alignment: .leading, spacing: 20.0) {
+                Image("RosalindFranklin")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(15)
+                
+                HStack {
+                    Text("Rosalind Franklin")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    Text("Scientist")
+                }
+                 
+                Text("British scientist best known for her contributions to the discovery of the molecular structure of deoxyribonucleic acid (DNA), a constituent of chromosomes that serves to encode genetic information.")
+            }
+            .padding()
+            .background(Rectangle().foregroundColor(.white))
+            .cornerRadius(15)
+            .shadow(radius: 15)
+            .padding()
         }
-        .padding()
     }
 }
 
